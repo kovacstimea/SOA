@@ -1,0 +1,60 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+<h1>Order Search</h1>
+
+<p>Enter an order number or search for a product name
+    containing given specified text:</p>
+
+<form class="bg-gray" action="#" th:object="${searchCriteria}" method="GET"
+      th:action="@{/orders/dosearch}">
+
+    <div class="row">
+        <!-- Order Number field -->
+        <div class="form-group col-4">
+            <label for="number" class="control-label col-xs-2">Order Number</label>
+            <input type="text" class="form-control" id="number"
+                   th:field="*{orderNumber}" placeholder="Enter order number" style="width: 15em;" />
+            <small class="form-text text-muted">Enter a valid 9 digit number</small>
+        </div>
+
+        <!-- Order Number errors (if any) -->
+        <div class="col-5 p-4">
+				<span th:if="${#fields.hasErrors('orderNumber')}"
+                      style="color: red; font-size: smaller" th:errors="*{orderNumber}">Incorrect data</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Client name field -->
+        <div class="form-group col-4">
+            <label for="search" class="control-label col-xs-2">Client name Search</label>
+            <input type="text" class="form-control" id="search"
+                   th:field="*{searchText}" placeholder="Enter client name"
+                   style="width: 15em;" pattern="[a-zA-Z]+"/>
+            <small class="form-text text-muted">Case-insensitive letters, supports part name matching</small>
+        </div>
+
+        <!-- Product name errors (if any) -->
+        <div class="col-5 p-4">
+				<span th:if="${#fields.hasErrors('searchText')}"
+                      style="color: red; font-size: smaller" th:errors="*{searchText}"></span>
+        </div>
+    </div>
+
+    <!--  Submit button -->
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+            <button type="submit" class="btn btn-primary">Find</button>
+        </div>
+    </div>
+</form>
+
+<div th:replace="footer :: copy"></div>
+
+</body>
+</html>

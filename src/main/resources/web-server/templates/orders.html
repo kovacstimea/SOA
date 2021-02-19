@@ -1,0 +1,51 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+<h1>Orders by Client</h1>
+
+<div th:if="not ${orders}">
+    <div class="alert alert-warning m-2">
+        No orders found containing '<span th:text="${search}">text</span>'.
+    </div>
+    <div style="height: 2cm">&nbsp;</div>
+</div>
+
+<div th:if="${orders}">
+    <p>
+        Orders whose client name contains ' <span th:text="${search}">text</span>'
+        are:
+    </p>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Order Number</th>
+            <th>Client</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td><a href="order.html"
+                   th:href="@{|/orders/${order.number}|}"
+                   th:text="|${order.number}|">11111111</a></td>
+            <td th:text="${order.client}">Client</td>
+            <td th:text="${order.total}">0</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div style="text-align: right">
+    Options: <a th:href="@{/}">Home</a> | <a th:href="@{/orders/search}">Account
+    Search</a>
+</div>
+
+<div th:replace="footer :: copy"></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+<h1>Product Details</h1>
+
+<div th:if="not ${product}">
+    <div class="m-3 alert alert-warning">
+        Unable to find product '<span th:text="${number}">number</span>'
+    </div>
+    <div style="height: 2cm">&nbsp;</div>
+</div>
+
+<div th:if="${product}" class="container">
+    <dl class="row">
+        <dt class="col-1">Number</dt>
+        <dd th:text="${product.number}">number</dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-1">Name</dt>
+        <dd th:text="${product.name}">number</dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-1">Price</dt>
+        <dd th:text="${product.price}">number</dd>
+    </dl>
+</div>
+
+<div class="row" style="height: 2cm">&nbsp;</div>
+
+<div class="row" style="text-align: right">
+	    <span class="col-12">
+		Options: &nbsp; <a th:href="@{/}">Home</a> | <a
+                th:href="@{/products/search}">Product Search</a></span>
+</div>
+
+<div th:replace="footer :: copy"></div>
+</body>
+</html>

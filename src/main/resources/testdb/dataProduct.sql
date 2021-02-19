@@ -1,0 +1,22 @@
+
+insert into T_PRODUCT (NUMBER, NAME) values ('123456789', 'Burger King Whopper');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456001', 'Five Guys Cheeseburger');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456002', 'KFC Original Recipe Chicken');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456003', 'White Castle Sliders');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456004', 'Arbys Roast Beef Sandwich');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456005', 'Sonic Cherry Limeade');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456006', 'Wendys Frosty');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456007', 'McDonalds Happy Meal');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456008', 'Starbucks Pumpkin Spice Latte');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456009', 'Taco Bell Burrito Supreme');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456010', 'Chick-fil-A Chicken Sandwich');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456011', 'Dunkin Coffee');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456012', 'Krispy Kreme Original Glazed Doughnuts');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456013', 'Taco Bells Nacho Fries');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456014', 'Culvers ButterBurger');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456015', 'Whataburger Taquito with Cheese');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456016', 'Dominos Pepperoni Pizza');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456017', 'Paneras Tortellini Alfredo');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456018', 'Panda Express Kung Pao Chicken');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456019', 'McDonalds Hash Browns');
+insert into T_PRODUCT (NUMBER, NAME) values ('123456020', 'Popeyes Biscuits');

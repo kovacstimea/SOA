@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+<h1>Order Details</h1>
+
+<div th:if="not ${order}">
+    <div class="m-3 alert alert-warning">
+        Unable to find order '<span th:text="${number}">number</span>'
+    </div>
+    <div style="height: 2cm">&nbsp;</div>
+</div>
+
+<div th:if="${order}" class="container">
+    <dl class="row">
+        <dt class="col-1">Number</dt>
+        <dd th:text="${order.number}">number</dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-1">Client</dt>
+        <dd th:text="${order.client}">number</dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-1">Total</dt>
+        <dd th:text="${order.total}">number</dd>
+    </dl>
+</div>
+
+<div class="row" style="height: 2cm">&nbsp;</div>
+
+<div class="row" style="text-align: right">
+	    <span class="col-12">
+		Options: &nbsp; <a th:href="@{/}">Home</a> | <a
+                th:href="@{/orders/search}">Order Search</a></span>
+</div>
+
+<div th:replace="footer :: copy"></div>
+</body>
+</html>
