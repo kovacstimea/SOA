@@ -34,9 +34,22 @@ public class WebProductsController {
         binder.setAllowedFields("productNumber", "searchText");
     }
 
+//    @RequestMapping("/products")
+//    public String goHome() {
+//        return "index";
+//    }
+
     @RequestMapping("/products")
-    public String goHome() {
-        return "index";
+    public String displayProductMenu(Model model) {
+        List<Product> products = productsService.allProducts();
+        model.addAttribute("products",products);
+        return "products";
+    }
+
+    @RequestMapping("/products/deleteProduct/{productNumber}")
+    public String deleteProduct(@PathVariable("productNumber") String productNumber) {
+        productsService.deleteProduct(productNumber);
+        return "redirect:/menu";
     }
 
     @RequestMapping("/products/{productNumber}")

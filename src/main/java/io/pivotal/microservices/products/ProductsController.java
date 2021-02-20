@@ -61,4 +61,20 @@ public class ProductsController {
             return products;
         }
     }
+
+    @RequestMapping("/products")
+    public List<Product> allProducts() {
+        List<Product> products = productRepository.findAll();
+        if (products == null || products.size() == 0)
+            throw new ProductNotFoundException("empty product list");
+        else {
+            return products;
+        }
+    }
+
+    @RequestMapping(value = "/products/deleteProduct/{productNumber}")
+    public String deleteProduct(@PathVariable("productNumber") String productNumber) {
+        productRepository.deleteByNumber(productNumber);
+        return "menu";
+    }
 }

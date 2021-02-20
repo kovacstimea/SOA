@@ -1,5 +1,6 @@
 package io.pivotal.microservices.products;
 
+import io.pivotal.microservices.orders.Order;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 
@@ -24,4 +25,14 @@ public interface ProductRepository extends Repository<Product, Long> {
      */
     @Query("SELECT count(*) from Product")
     public int countProducts();
+
+    /**
+     * Find all products
+     */
+    public List<Product> findAll();
+
+    /**
+     * Delete a specific product by products number
+     */
+    public void deleteByNumber(String productNumber);
 }

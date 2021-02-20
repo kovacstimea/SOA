@@ -74,4 +74,27 @@ public class WebOrdersService {
         else
             return order;
     }
+
+    public List<Order> allOrders() {
+        logger.info("allOrders() invoked");
+        Order[] orders = null;
+
+        try {
+            orders = restTemplate.getForObject(serviceUrl + "/orders", Order[].class);
+        } catch (HttpClientErrorException e) { // 404
+            // Nothing found
+        }
+
+        if (orders == null || orders.length == 0)
+            return null;
+        else
+            return Arrays.asList(orders);
+    }
+
+    public void deleteOrder(String orderNumber){
+        try {
+            restTemplate.getForObject(serviceUrl + "/orders/deleteOrder/{orderNumber}", Order.class, orderNumber);
+        } catch (Exception e) {
+        }
+    }
 }

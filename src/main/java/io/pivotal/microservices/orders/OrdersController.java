@@ -61,4 +61,21 @@ public class OrdersController {
             return orders;
         }
     }
+
+    @RequestMapping("/orders")
+    public List<Order> allOrders() {
+        List<Order> orders = orderRepository.findAll();
+
+        if (orders == null || orders.size() == 0)
+            throw new OrderNotFoundException("empty order list");
+        else {
+            return orders;
+        }
+    }
+
+    @RequestMapping(value = "/orders/deleteOrder/{orderNumber}")
+    public String deleteOrder(@PathVariable("orderNumber") String orderNumber) {
+        orderRepository.deleteByNumber(orderNumber);
+        return "menu";
+    }
 }

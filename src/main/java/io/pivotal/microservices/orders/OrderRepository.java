@@ -24,4 +24,14 @@ public interface OrderRepository extends Repository<Order, Long> {
      */
     @Query("SELECT count(*) from Order")
     public int countOrders();
+
+    /**
+     * Find all orders
+     */
+    public List<Order> findAll();
+
+    /**
+     * Delete a specific order by order number
+     */
+    public void deleteByNumber(String orderNumber);
 }

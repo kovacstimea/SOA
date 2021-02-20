@@ -74,4 +74,27 @@ public class WebProductsService {
         else
             return product;
     }
+
+    public List<Product> allProducts() {
+        logger.info("allProducts() invoked");
+        Product[] products = null;
+
+        try {
+            products = restTemplate.getForObject(serviceUrl + "/products", Product[].class);
+        } catch (HttpClientErrorException e) { // 404
+            // Nothing found
+        }
+
+        if (products == null || products.length == 0)
+            return null;
+        else
+            return Arrays.asList(products);
+    }
+
+    public void deleteProduct(String productNumber){
+        try {
+            restTemplate.getForObject(serviceUrl + "/products/deleteProduct/{productNumber}", Product.class, productNumber);
+        } catch (Exception e) {
+        }
+    }
 }
