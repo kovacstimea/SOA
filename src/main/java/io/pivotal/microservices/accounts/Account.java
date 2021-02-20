@@ -12,8 +12,6 @@ import javax.persistence.Table;
 /**
  * Persistent account entity with JPA markup. Accounts are stored in an H2
  * relational database.
- * 
- * @author Paul Chapman
  */
 @Entity
 @Table(name = "T_ACCOUNT")

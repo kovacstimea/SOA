@@ -12,8 +12,6 @@ import io.pivotal.microservices.exceptions.AccountNotFoundException;
 
 /**
  * A RESTFul controller for accessing account information.
- * 
- * @author Paul Chapman
  */
 @RestController
 public class AccountsController {

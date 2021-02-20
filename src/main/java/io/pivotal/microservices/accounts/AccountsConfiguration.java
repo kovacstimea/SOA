@@ -20,8 +20,6 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 /**
  * The accounts Spring configuration.
- * 
- * @author Paul Chapman
  */
 @Configuration
 @ComponentScan

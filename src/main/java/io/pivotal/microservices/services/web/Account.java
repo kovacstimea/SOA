@@ -7,8 +7,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 /**
  * Account DTO - used to interact with the {@link WebAccountsService}.
- * 
- * @author Paul Chapman
+
  */
 @JsonRootName("Account")
 public class Account {
