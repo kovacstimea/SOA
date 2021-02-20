@@ -38,7 +38,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active m-2"><a href="/" th:href="@{/}">Home</a></li>
+            <li class="nav-item active m-2"><a href="/home" th:href="@{/home}">Home</a></li>
             <li class="nav-item m-2">
                 <a href="https://spring.io/blog/2015/07/14/microservices-with-spring">Menu</a>
             </li>
@@ -49,7 +49,7 @@
                 <a href="http://spring.io/blog">Create order</a>
             </li>
             <li class="nav-item m-2">
-                <a href="http://spring.io/blog">Log out</a>
+                <a href="/" th:href="@{/}">Log out</a>
             </li>
         </ul>
 

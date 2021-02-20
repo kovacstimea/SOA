@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Home page controller.
@@ -19,6 +20,11 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String home() {
+		return "redirect:login";
+	}
+
+	@RequestMapping("/home")
+	public String hhome() {
 		return "index";
 	}
 
