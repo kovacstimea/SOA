@@ -28,7 +28,7 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String home() {
-		return "redirect:login";
+		return "redirect:/login";
 	}
 
 	@RequestMapping("/home")
@@ -36,7 +36,7 @@ public class HomeController {
 		if (authenticationService.getLogged() == true)
 			return "index";
 		else
-			return "login";
+			return "redirect:/login";
 	}
 
 

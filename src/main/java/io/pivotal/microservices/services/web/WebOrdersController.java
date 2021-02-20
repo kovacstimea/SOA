@@ -43,7 +43,7 @@ public class WebOrdersController {
         if (authenticationService.getLogged() == true)
             return "index";
         else
-            return "login";
+            return "redirect:/login";
     }
 
     @RequestMapping("/orders")

@@ -45,6 +45,6 @@ public class WebAuthenticationController {
     public String displayLogout(Model model){
         model.addAttribute(new User());
         authenticationService.setLogged(false);
-        return "login";
+        return "redirect:/login";
     }
 }

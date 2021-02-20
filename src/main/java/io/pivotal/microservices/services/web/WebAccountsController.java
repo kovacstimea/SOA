@@ -44,7 +44,7 @@ public class WebAccountsController {
         if (authenticationService.getLogged() == true)
             return "index";
         else
-            return "login";
+            return "redirect:/login";
     }
 
     @RequestMapping("/accounts/{accountNumber}")
