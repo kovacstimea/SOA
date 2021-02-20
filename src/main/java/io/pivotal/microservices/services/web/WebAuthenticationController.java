@@ -29,11 +29,17 @@ public class WebAuthenticationController {
 
     @PostMapping("/login")
     public String login(@ModelAttribute User user){
-        System.out.println(user.getUsername());
-        boolean successful = authenticationService.loginUser(user);
-        if(successful)
-            return "redirect:/index";
+        String successful = authenticationService.loginUser(user);
+        System.out.println(successful);
+        if(successful.equals("true"))
+            return "redirect:/home";
         else
-            return "redirect:/menu";
+            return "redirect:/login";
+    }
+
+    @RequestMapping("/logout")
+    public String displayLogout(Model model){
+        model.addAttribute(new User());
+        return "login";
     }
 }

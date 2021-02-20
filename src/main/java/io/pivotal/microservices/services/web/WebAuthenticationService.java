@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Logger;
 
 @Service
@@ -22,18 +24,8 @@ public class WebAuthenticationService {
         this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl : "http://" + serviceUrl;
     }
 
-    public boolean loginUser(User user){
-        try {
-            System.out.println("URL is" + this.serviceUrl);
-            ResponseEntity<String> result = restTemplate.postForEntity(serviceUrl + "/login", user, String.class);
-            System.out.println(result.getBody());
-            System.out.println("sent");
-            if(result.getBody().equals("true"))
-                return true;
-            else
-                return false;
-        } catch (Exception e) {
-            return false;
-        }
+    public String loginUser(User user){
+        String result = restTemplate.getForObject(serviceUrl + "/login/{user}/{password}", String.class, user.getUsername(), user.getPassword());
+        return result;
     }
 }
