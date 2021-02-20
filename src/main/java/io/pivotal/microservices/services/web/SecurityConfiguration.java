@@ -1,37 +1,37 @@
 package io.pivotal.microservices.services.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+//import org.springframework.security.authentication.AuthenticationManager;
 //import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 //import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
+//@EnableWebSecurity
 public class SecurityConfiguration {//extends WebSecurityConfigurerAdapter {
 
-//    @Override
-//    public void configure(HttpSecurity http) throws Exception {
-//        http.antMatcher("/**")
-//                .authorizeRequests()
-//                .antMatchers("/", "/eureka/**").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .oauth2Login();
+//    @Autowired
+//    private UserDetailsService userDetailsService;
+//
+//    @Bean
+//    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
+//
+//    @Autowired
+//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//
+//        auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
+//
 //    }
 //
 //    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("root")
-//                .password("pass") // Spring Security 5 requires specifying the password storage format
-//                .roles("USER");
+//    @Bean
+//    public AuthenticationManager authenticationManagerBean() throws Exception {
+//        return super.authenticationManagerBean();
 //    }
-//
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .authorizeRequests()
-//                .mvcMatchers("/").permitAll()
-//                .anyRequest().authenticated();
-//    }
-
 }

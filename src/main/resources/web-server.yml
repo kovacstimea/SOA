@@ -3,6 +3,12 @@
 # up the JDBC Depdendency, but this application doesn't need it.
 spring.autoconfigure.exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
+#okta:
+#  oauth2:
+#    issuer: https://{dev-47415479.okta.com}/oauth2/default
+#    client-id: 0oa7sbl66YFgRokBt5d6
+#    client-secret: e-l2_C_9yoW3G2m-X_pvHi882bSjoYY5YRjK3v_3
+
 # Spring properties
 spring:
   application:
@@ -13,6 +19,21 @@ spring:
     cache: false       # Allow Thymeleaf templates to be reloaded at runtime
     prefix: classpath:/web-server/templates/    # Trailing / mandatory
                        # Template location for this application only
+#
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          github:
+#            client-id: e012bb93de44306c0a30
+#            client-secret: 7a70e689e365611cedec687d89424badb7a531b1
+#          okta:
+#            client-id: 0oa7sbl66YFgRokBt5d6
+#            client-secret: e-l2_C_9yoW3G2m-X_pvHi882bSjoYY5YRjK3v_3
+#            client-name: Okta
+#        provider:
+#          okta:
+#            issuer-uri: https://{dev-47415479.okta.com}/oauth2/default
 #
 #    security:
 #      oauth2:

@@ -40,7 +40,10 @@ dependencies {
     compile group: 'org.hsqldb', name: 'hsqldb'
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter'
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-server', version: '2.0.1.RELEASE'
-//    compile 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'com.okta.spring:okta-spring-boot-starter:1.1.0'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+//    implementation 'org.springframework.security:spring-security-oauth2-client'
+//    implementation 'org.springframework.security:spring-security-oauth2-jose'
 //    compile 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure'
 
     testCompile 'junit:junit:4.+'

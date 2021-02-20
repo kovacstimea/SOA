@@ -14,6 +14,7 @@
 		<config>java:io.pivotal.microservices.services.accounts.AccountsServer</config>
 		<config>java:io.pivotal.microservices.services.orders.OrdersServer</config>
 		<config>java:io.pivotal.microservices.services.products.ProductsServer</config>
+		<config>java:io.pivotal.microservices.services.authentication.AuthenticationServer</config>
 	</autoconfigs>
 	<configSets>
 		<configSet>
@@ -26,6 +27,7 @@
 				<config>java:io.pivotal.microservices.services.accounts.AccountsServer</config>
 				<config>java:io.pivotal.microservices.services.orders.OrdersServer</config>
                 <config>java:io.pivotal.microservices.services.products.ProductsServer</config>
+                <config>java:io.pivotal.microservices.services.authentication.AuthenticationServer</config>
 			</configs>
 			<profiles>
 			</profiles>
