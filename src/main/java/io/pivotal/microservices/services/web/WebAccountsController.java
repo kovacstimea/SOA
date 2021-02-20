@@ -24,10 +24,14 @@ public class WebAccountsController {
     @Autowired
     protected WebAccountsService accountsService;
 
+    @Autowired
+    protected WebAuthenticationService authenticationService;
+
     protected Logger logger = Logger.getLogger(WebAccountsController.class.getName());
 
-    public WebAccountsController(WebAccountsService accountsService) {
+    public WebAccountsController(WebAccountsService accountsService, WebAuthenticationService authenticationService) {
         this.accountsService = accountsService;
+        this.authenticationService = authenticationService;
     }
 
     @InitBinder
@@ -37,7 +41,10 @@ public class WebAccountsController {
 
     @RequestMapping("/accounts")
     public String goHome() {
-        return "index";
+        if (authenticationService.getLogged() == true)
+            return "index";
+        else
+            return "login";
     }
 
     @RequestMapping("/accounts/{accountNumber}")

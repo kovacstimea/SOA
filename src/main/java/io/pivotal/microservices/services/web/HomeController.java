@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 //import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
 //import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.jdbc.core.BatchUpdateUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +19,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
 
+	@Autowired
+	protected WebAuthenticationService authenticationService;
+
+	public HomeController(WebAuthenticationService authenticationService) {
+		this.authenticationService = authenticationService;
+	}
+
 	@RequestMapping("/")
 	public String home() {
 		return "redirect:login";
@@ -25,7 +33,10 @@ public class HomeController {
 
 	@RequestMapping("/home")
 	public String hhome() {
-		return "index";
+		if (authenticationService.getLogged() == true)
+			return "index";
+		else
+			return "login";
 	}
 
 

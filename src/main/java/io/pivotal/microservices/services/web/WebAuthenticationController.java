@@ -31,15 +31,20 @@ public class WebAuthenticationController {
     public String login(@ModelAttribute User user){
         String successful = authenticationService.loginUser(user);
         System.out.println(successful);
-        if(successful.equals("true"))
+        if(successful.equals("true")) {
+            authenticationService.setLogged(true);
             return "redirect:/home";
-        else
+        }
+        else {
+            authenticationService.setLogged(false);
             return "redirect:/login";
+        }
     }
 
     @RequestMapping("/logout")
     public String displayLogout(Model model){
         model.addAttribute(new User());
+        authenticationService.setLogged(false);
         return "login";
     }
 }

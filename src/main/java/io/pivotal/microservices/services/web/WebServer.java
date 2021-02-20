@@ -106,7 +106,7 @@ public class WebServer {
      */
     @Bean
     public WebAccountsController accountsController() {
-        return new WebAccountsController(accountsService());
+        return new WebAccountsController(accountsService(), authenticationService());
     }
 
     /**
@@ -114,7 +114,7 @@ public class WebServer {
      */
     @Bean
     public WebProductsController productsController() {
-        return new WebProductsController(productsService());
+        return new WebProductsController(productsService(), authenticationService());
     }
 
     /**
@@ -122,7 +122,7 @@ public class WebServer {
      */
     @Bean
     public WebOrdersController ordersController() {
-        return new WebOrdersController(ordersService());
+        return new WebOrdersController(ordersService(), authenticationService());
     }
 
     @Bean
@@ -132,6 +132,6 @@ public class WebServer {
 
     @Bean
     public HomeController homeController() {
-        return new HomeController();
+        return new HomeController(authenticationService());
     }
 }

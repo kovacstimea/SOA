@@ -23,10 +23,14 @@ public class WebOrdersController {
     @Autowired
     protected WebOrdersService ordersService;
 
+    @Autowired
+    protected WebAuthenticationService authenticationService;
+
     protected Logger logger = Logger.getLogger(WebOrdersController.class.getName());
 
-    public WebOrdersController(WebOrdersService ordersService) {
+    public WebOrdersController(WebOrdersService ordersService, WebAuthenticationService authenticationService) {
         this.ordersService = ordersService;
+        this.authenticationService = authenticationService;
     }
 
     @InitBinder
@@ -36,7 +40,10 @@ public class WebOrdersController {
 
     @RequestMapping("/index")
     public String goHome() {
-        return "index";
+        if (authenticationService.getLogged() == true)
+            return "index";
+        else
+            return "login";
     }
 
     @RequestMapping("/orders")

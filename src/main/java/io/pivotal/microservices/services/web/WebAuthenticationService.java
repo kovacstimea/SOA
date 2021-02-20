@@ -18,6 +18,8 @@ public class WebAuthenticationService {
 
     protected String serviceUrl;
 
+    protected Boolean logged = false;
+
     protected Logger logger = Logger.getLogger(WebAuthenticationService.class.getName());
 
     public WebAuthenticationService(String serviceUrl) {
@@ -27,5 +29,13 @@ public class WebAuthenticationService {
     public String loginUser(User user){
         String result = restTemplate.getForObject(serviceUrl + "/login/{user}/{password}", String.class, user.getUsername(), user.getPassword());
         return result;
+    }
+
+    public void setLogged(Boolean value) {
+        this.logged = value;
+    }
+
+    public Boolean getLogged() {
+        return this.logged;
     }
 }
