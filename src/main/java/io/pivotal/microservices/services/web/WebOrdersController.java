@@ -39,12 +39,6 @@ public class WebOrdersController {
         return "index";
     }
 
-//    @RequestMapping("/menu")
-//    public String displayMenu(Model model){
-//        model.addAttribute(new Account());
-//        return "menu";
-//    }
-
     @RequestMapping("/orders")
     public String displayOrderMenu(Model model) {
         List<Order> orders = ordersService.allOrders();

@@ -34,15 +34,9 @@ public class WebProductsController {
         binder.setAllowedFields("productNumber", "searchText");
     }
 
-//    @RequestMapping("/index")
-//    public String goHome() {
-//        return "index";
-//    }
-
     @RequestMapping("/menu")
-    public String displayMenu(Model model){
-        model.addAttribute(new Account());
-        return "menu";
+    public String goHome() {
+        return "index";
     }
 
     @RequestMapping("/products")

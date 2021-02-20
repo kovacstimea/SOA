@@ -3,6 +3,7 @@ package io.pivotal.microservices.products;
 import io.pivotal.microservices.orders.Order;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -34,5 +35,6 @@ public interface ProductRepository extends Repository<Product, Long> {
     /**
      * Delete a specific product by products number
      */
+    @Transactional
     public void deleteByNumber(String productNumber);
 }

@@ -1,7 +1,10 @@
 package io.pivotal.microservices.orders;
 
+import org.hibernate.annotations.Parameter;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -33,5 +36,6 @@ public interface OrderRepository extends Repository<Order, Long> {
     /**
      * Delete a specific order by order number
      */
+    @Transactional
     public void deleteByNumber(String orderNumber);
 }

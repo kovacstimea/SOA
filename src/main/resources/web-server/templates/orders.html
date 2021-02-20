@@ -36,7 +36,7 @@
             <td th:text="${order.client}">Client</td>
             <td th:text="${order.total}">0</td>
             <td>
-                <form action="#" th:action="@{|/orders/deleteOrder/${order.number}|}" >
+                <form action="#" th:action="@{|/orders/deleteOrder/${order.number}|}">
                     <button type="submit" class="btn">
                         Delete
                     </button>
