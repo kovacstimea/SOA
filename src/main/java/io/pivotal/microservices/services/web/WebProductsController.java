@@ -34,10 +34,16 @@ public class WebProductsController {
         binder.setAllowedFields("productNumber", "searchText");
     }
 
-//    @RequestMapping("/products")
+//    @RequestMapping("/index")
 //    public String goHome() {
 //        return "index";
 //    }
+
+    @RequestMapping("/menu")
+    public String displayMenu(Model model){
+        model.addAttribute(new Account());
+        return "menu";
+    }
 
     @RequestMapping("/products")
     public String displayProductMenu(Model model) {

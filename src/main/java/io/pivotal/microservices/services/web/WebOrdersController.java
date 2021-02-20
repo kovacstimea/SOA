@@ -34,9 +34,15 @@ public class WebOrdersController {
         binder.setAllowedFields("orderNumber", "searchText");
     }
 
-//    @RequestMapping("/orders")
-//    public String goHome() {
-//        return "index";
+    @RequestMapping("/index")
+    public String goHome() {
+        return "index";
+    }
+
+//    @RequestMapping("/menu")
+//    public String displayMenu(Model model){
+//        model.addAttribute(new Account());
+//        return "menu";
 //    }
 
     @RequestMapping("/orders")
@@ -49,7 +55,7 @@ public class WebOrdersController {
     @RequestMapping("/orders/deleteOrder/{orderNumber}")
     public String deleteOrder(@PathVariable("orderNumber") String orderNumber) {
         ordersService.deleteOrder(orderNumber);
-        return "redirect:/menu";
+        return "redirect:/index";
     }
 
     @RequestMapping("/orders/{orderNumber}")

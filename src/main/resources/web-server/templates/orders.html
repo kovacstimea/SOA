@@ -5,19 +5,18 @@
 <head th:replace="header :: copy"></head>
 
 <body>
-<h1>Orders by Client</h1>
+<h1>Orders</h1>
 
 <div th:if="not ${orders}">
     <div class="alert alert-warning m-2">
-        No orders found containing '<span th:text="${search}">text</span>'.
+        No orders found.
     </div>
     <div style="height: 2cm">&nbsp;</div>
 </div>
 
 <div th:if="${orders}">
     <p>
-        Orders whose client name contains ' <span th:text="${search}">text</span>'
-        are:
+        Orders are:
     </p>
 
     <table class="table table-striped">
@@ -36,13 +35,20 @@
                    th:text="|${order.number}|">11111111</a></td>
             <td th:text="${order.client}">Client</td>
             <td th:text="${order.total}">0</td>
+            <td>
+                <form action="#" th:action="@{|/orders/deleteOrder/${order.number}|}" >
+                    <button type="submit" class="btn">
+                        Delete
+                    </button>
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
 
 <div style="text-align: right">
-    Options: <a th:href="@{/}">Home</a> | <a th:href="@{/orders/search}">Account
+    Options: <a th:href="@{/}">Home</a> | <a th:href="@{/orders/search}">Order
     Search</a>
 </div>
 

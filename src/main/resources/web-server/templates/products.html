@@ -9,15 +9,14 @@
 
 <div th:if="not ${products}">
     <div class="alert alert-warning m-2">
-        No products found containing '<span th:text="${search}">text</span>'.
+        No products found.
     </div>
     <div style="height: 2cm">&nbsp;</div>
 </div>
 
 <div th:if="${products}">
     <p>
-        Products whose name contains ' <span th:text="${search}">text</span>'
-        are:
+        Products are:
     </p>
 
     <table class="table table-striped">
@@ -36,13 +35,20 @@
                    th:text="|${product.number}|">11111111</a></td>
             <td th:text="${product.name}">Name</td>
             <td th:text="${product.price}">0</td>
+            <td>
+                <form action="#" th:action="@{|/products/deleteProduct/${product.number}|}" >
+                    <button type="submit" class="btn">
+                        Delete
+                    </button>
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
 
 <div style="text-align: right">
-    Options: <a th:href="@{/}">Home</a> | <a th:href="@{/products/search}">Account
+    Options: <a th:href="@{/}">Home</a> | <a th:href="@{/products/search}">Product
     Search</a>
 </div>
 
