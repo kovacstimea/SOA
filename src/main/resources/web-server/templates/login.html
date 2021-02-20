@@ -1,0 +1,20 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+<h3>Login</h3>
+
+<form method="post" th:action="@{/login}" th:object="${user}" >
+    <h1>Authentication</h1>
+    <input type="text" onfocus="this.value=''" placeholder="username" th:field="*{username}" /></p>
+    <input type="password" onfocus="this.value=''"  placeholder="password"th:field="*{password}" /></p>
+    <button name="login">Login</button>
+</form>
+
+<div th:replace="footer :: copy"></div>
+
+</body>
+</html>
