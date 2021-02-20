@@ -28,8 +28,7 @@
 <body th:fragment="copy" class="container">
 <nav class="navbar navbar-default bg-dark navbar-expand-lg" role="navigation"
 	 style="margin-bottom: 2px;">
-	<a title="Spring IO" href="http://www.spring.io"><img height="50"
-														  th:src="@{/spring-trans.png}" src="spring-trans.png" /></a>
+	<img height="60" th:src="@{/food.png}" src="food.png" />
 	&nbsp;&nbsp;&nbsp;
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,18 +40,22 @@
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active m-2"><a href="/" th:href="@{/}">Home</a></li>
 			<li class="nav-item m-2">
-				<a href="https://spring.io/blog/2015/07/14/microservices-with-spring">This Blog</a>
+				<a href="https://spring.io/blog/2015/07/14/microservices-with-spring">Menu</a>
 			</li>
 			<li class="nav-item m-2">
-				<a href="http://spring.io/blog">Spring Blog</a>
+				<a href="http://spring.io/blog">My orders</a>
+			</li>
+			<li class="nav-item m-2">
+				<a href="http://spring.io/blog">Create order</a>
+			</li>
+			<li class="nav-item m-2">
+				<a href="http://spring.io/blog">Log out</a>
 			</li>
 		</ul>
 
 		<ul class="navbar-nav navbar-right bg-light">
 			<li>
-				<a href="https://tanzu.vmware.com"><img alt="Tanzu"
-														title="Tanzu" height="42" th:src="@{/logo-vmware-tanzu.png}"
-														src="logo-vmware-tanzu.png" /></a>
+				<img alt="Tanzu" title="Tanzu" height="60" th:src="@{/food.png}" src="food.png" />
 			</li>
 		</ul>
 	</div>

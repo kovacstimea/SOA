@@ -13,6 +13,16 @@ spring:
     cache: false       # Allow Thymeleaf templates to be reloaded at runtime
     prefix: classpath:/web-server/templates/    # Trailing / mandatory
                        # Template location for this application only
+#
+#    security:
+#      oauth2:
+#        resource:
+#          prefer-token-info: true
+#        client:
+#          registration:
+#            github:
+#              client-id: e012bb93de44306c0a30
+#              client-secret: 7a70e689e365611cedec687d89424badb7a531b1
 
 # Map the error path to error template (for Thymeleaf)
 error.path: /error
@@ -25,6 +35,8 @@ server.port: 3333   # HTTP (Tomcat) port
 #  2. Define URL of registration server (defaultZone)
 eureka:
   client:
+#    registerWithEureka: false
+#    fetchRegistry: false
     serviceUrl:
       defaultZone: http://${registration.server.hostname}:1111/eureka/
   instance:
