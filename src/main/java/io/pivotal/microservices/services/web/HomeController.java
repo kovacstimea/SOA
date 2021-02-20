@@ -22,6 +22,8 @@ public class HomeController {
 		return "index";
 	}
 
+
+
 //	@RequestMapping("/securedPage")
 //	public String securedPage(Model model,
 //							  @RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient authorizedClient,
