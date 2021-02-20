@@ -37,8 +37,8 @@ public class OrdersServer {
         if (System.getProperty(RegistrationServer.REGISTRATION_SERVER_HOSTNAME) == null)
             System.setProperty(RegistrationServer.REGISTRATION_SERVER_HOSTNAME, "localhost");
 
-        // Tell server to look for products-server.properties or
-        // products-server.yml
+        // Tell server to look for orders-server.properties or
+        // orders-server.yml
         System.setProperty("spring.config.name", "orders-server");
 
         SpringApplication.run(OrdersServer.class, args);

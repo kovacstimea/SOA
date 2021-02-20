@@ -45,6 +45,9 @@ public class WebServer {
     public static final String ORDERS_SERVICE_URL = "http://ORDERS-SERVICE";
 
 
+    public static final String AUTHENTICATION_SERVICE_URL = "http://AUTHENTICATION-SERVICE";
+
+
     /**
      * Run the application using Spring Boot and an embedded servlet engine.
      */
@@ -92,6 +95,11 @@ public class WebServer {
         return new WebOrdersService(ORDERS_SERVICE_URL);
     }
 
+    @Bean
+    public WebAuthenticationService authenticationService() {
+        return new WebAuthenticationService(AUTHENTICATION_SERVICE_URL);
+    }
+
     /**
      * Create the controller, passing it the {@link WebAccountsService} to use.
      */
@@ -114,6 +122,11 @@ public class WebServer {
     @Bean
     public WebOrdersController ordersController() {
         return new WebOrdersController(ordersService());
+    }
+
+    @Bean
+    public WebAuthenticationController authenticationController() {
+        return new WebAuthenticationController(authenticationService());
     }
 
     @Bean
