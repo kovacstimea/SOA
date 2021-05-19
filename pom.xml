@@ -10,6 +10,12 @@
         <!-- Stand-alone RESTFul application for testing only -->
         <start-class>io.pivotal.microservices.services.Main</start-class>
     </properties>
+    
+    <properties>
+      <sonar.projectKey>kovacstimea_SOA</sonar.projectKey>
+      <sonar.organization>kovacstimea</sonar.organization>
+      <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
